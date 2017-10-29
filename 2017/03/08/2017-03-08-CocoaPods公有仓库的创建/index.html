@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+  
+  
+  <link rel="stylesheet" media="all" href="/lib/Han/dist/han.min.css?v=3.3">
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.ico?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.ico?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="iOS,CocoaPods,Git," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Lisme Blog" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="本文发布于 BY Blog、简书 转载请保留链接  前言作为iOS开发者，CocoaPods的使用为我们开发带来了极大的便利。 我们先来看看CocoaPods本地目录中有什么 $ cd ~/.cocoapods/repos/master 或者显示隐藏文件 $ defaults write com.apple.finder AppleShowAllFiles -boolean true ; kil">
+<meta name="keywords" content="iOS,CocoaPods,Git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CocoaPods公有仓库的创建">
+<meta property="og:url" content="http://mysticpg.com/2017/03/08/2017-03-08-CocoaPods公有仓库的创建/index.html">
+<meta property="og:site_name" content="Lisme Blog">
+<meta property="og:description" content="本文发布于 BY Blog、简书 转载请保留链接  前言作为iOS开发者，CocoaPods的使用为我们开发带来了极大的便利。 我们先来看看CocoaPods本地目录中有什么 $ cd ~/.cocoapods/repos/master 或者显示隐藏文件 $ defaults write com.apple.finder AppleShowAllFiles -boolean true ; kil">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://ww4.sinaimg.cn/large/006tKfTcgy1fdgdi59dnnj31kw10247u.jpg">
+<meta property="og:image" content="https://ww3.sinaimg.cn/large/006tKfTcgy1fdgdpyex7mj30yk0bkdi5.jpg">
+<meta property="og:image" content="https://ww4.sinaimg.cn/large/006tKfTcgy1fdgdsl5tdxj318q14mdq2.jpg">
+<meta property="og:image" content="https://ww3.sinaimg.cn/large/006tNbRwgy1fdeco0ndc9j30r10h3wgt.jpg">
+<meta property="og:image" content="https://ww4.sinaimg.cn/large/006tNbRwgy1fdecs0z72oj30n004q3z2.jpg">
+<meta property="og:image" content="https://ww2.sinaimg.cn/large/006tNbRwgy1fdfhvy3c19j31iq0dqn03.jpg">
+<meta property="og:image" content="https://ww4.sinaimg.cn/large/006tNbRwgy1fdfioo1c4zj31bq0s20zn.jpg">
+<meta property="og:image" content="https://ww3.sinaimg.cn/large/006tNbRwgy1fded7yh8ugj31kw19djyk.jpg">
+<meta property="og:image" content="https://ww1.sinaimg.cn/large/006tNbRwgy1fdedvficvaj30fu0loaex.jpg">
+<meta property="og:image" content="https://ww4.sinaimg.cn/large/006tNbRwgy1fdfkr2l7omj31kw0d7446.jpg">
+<meta property="og:updated_time" content="2017-09-12T09:58:29.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CocoaPods公有仓库的创建">
+<meta name="twitter:description" content="本文发布于 BY Blog、简书 转载请保留链接  前言作为iOS开发者，CocoaPods的使用为我们开发带来了极大的便利。 我们先来看看CocoaPods本地目录中有什么 $ cd ~/.cocoapods/repos/master 或者显示隐藏文件 $ defaults write com.apple.finder AppleShowAllFiles -boolean true ; kil">
+<meta name="twitter:image" content="https://ww4.sinaimg.cn/large/006tKfTcgy1fdgdi59dnnj31kw10247u.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://mysticpg.com/2017/03/08/2017-03-08-CocoaPods公有仓库的创建/"/>
+
+
+
+
+
+  <title>CocoaPods公有仓库的创建 | Lisme Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Lisme Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">The day will not come again</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://mysticpg.com/2017/03/08/2017-03-08-CocoaPods公有仓库的创建/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lisme">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lisme Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">CocoaPods公有仓库的创建</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-08T00:00:00+08:00">
+                2017-03-08
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-09-12T17:58:29+08:00">
+                2017-09-12
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,683
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  7
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>本文发布于 <a href="http://qiubaiying.github.io" target="_blank" rel="external">BY Blog</a>、<a href="http://www.jianshu.com/p/d2d98298b1b8" target="_blank" rel="external">简书</a> 转载请保留链接</p>
+</blockquote>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>作为iOS开发者，CocoaPods的使用为我们开发带来了极大的便利。</p>
+<p>我们先来看看CocoaPods本地目录中有什么</p>
+<pre><code>$ cd ~/.cocoapods/repos/master
+</code></pre><p>或者显示隐藏文件</p>
+<pre><code>$ defaults write com.apple.finder AppleShowAllFiles -boolean true ; killall Finder
+</code></pre><p>然后进入 <code>~/.cocoapods/repos/master</code> </p>
+<p>你会发现 <code>master</code> 是一个 git 仓库，输出仓库的远程地址，发现是一个GitHub仓库</p>
+<pre><code>$ git remote -v
+
+origin    https://github.com/CocoaPods/Specs.git (fetch)
+origin    https://github.com/CocoaPods/Specs.git (push)
+</code></pre><p><a href=""><img src="https://ww4.sinaimg.cn/large/006tKfTcgy1fdgdi59dnnj31kw10247u.jpg" alt=""></a></p>
+<p>继续，我们进入<code>Specs</code>文件夹一直往里点</p>
+<p><img src="https://ww3.sinaimg.cn/large/006tKfTcgy1fdgdpyex7mj30yk0bkdi5.jpg" alt=""></p>
+<p>你会发现很多框架以及版本号，选择一个框架，通过</p>
+<pre><code>$ pod search YYImage
+</code></pre><p>pod搜索 Specs 文件夹中的框架，输出框架信息</p>
+<pre><code>-&gt; YYImage (1.0.4)
+   Image framework for iOS to display/encode/decode animated WebP, APNG, GIF,
+   and more.
+   pod &apos;YYImage&apos;, &apos;~&gt; 1.0.4&apos;
+   - Homepage: https://github.com/ibireme/YYImage
+   - Source:   https://github.com/ibireme/YYImage.git
+   - Versions: 1.0.4, 1.0.3, 1.0.2, 1.0.1, 1.0, 0.9.5, 0.9.4, 0.9.3, 0.9.2,
+   0.9.1, 0.9.0, 0.8.9 [master repo]
+   - Subspecs:
+     - YYImage/Core (1.0.4)
+     - YYImage/WebP (1.0.4)
+</code></pre><p>每个版本号对应的一个json文件,描述了每个对应版本的框架的信息、配置、及源码下载地。</p>
+<p><img src="https://ww4.sinaimg.cn/large/006tKfTcgy1fdgdsl5tdxj318q14mdq2.jpg" alt=""></p>
+<p>我们在 CocoaPods 发布我们的框架时，就是要在 <code>master</code> 仓库中添加我们的仓库描述信息，然后push到远程仓库中。不过这个过程不用我们手动去操作，只需要通过<code>pod</code>命令进行操作即可。</p>
+<p>下面我们将一步步把我封装的这个简单的TextFiled控件 <a href="https://github.com/qiubaiying/BYPhoneNumTF" target="_blank" rel="external">BYPhoneNumTF</a> 上传到 Cocoapods 公有仓库中。</p>
+<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><h4 id="注册-CocoaPods-账号"><a href="#注册-CocoaPods-账号" class="headerlink" title="注册 CocoaPods 账号"></a>注册 CocoaPods 账号</h4><p>想创建开源的Pod库，就要注册一个CocoaPods账号，我们使用终端注册, <code>email</code> 用你的 <code>GitHub</code> 邮箱</p>
+<pre><code>$ pod trunk register GitHub_email &apos;user_name&apos; --verbose
+</code></pre><p>等终端出现下面文字，CocoaPods 会发一个<code>确认邮件</code>到你的邮箱上，登录你的邮箱进行确认。</p>
+<pre><code>[!] Please verify the session by clicking the link in the verification email that has been sent to you_email@163.com
+</code></pre><p><img src="https://ww3.sinaimg.cn/large/006tNbRwgy1fdeco0ndc9j30r10h3wgt.jpg" alt=""></p>
+<p>注册成功！</p>
+<p>确认后再终端输入</p>
+<pre><code>pod trunk me
+</code></pre><p>可以看到你的注册信息</p>
+<p><img src="https://ww4.sinaimg.cn/large/006tNbRwgy1fdecs0z72oj30n004q3z2.jpg" alt=""></p>
+<h4 id="创建Git仓库"><a href="#创建Git仓库" class="headerlink" title="创建Git仓库"></a>创建Git仓库</h4><p>在 <a href="https://github.com" target="_blank" rel="external">GitHub</a> 上创建一个公开项目，项目中必须包含这几个文件</p>
+<ul>
+<li><code>LICENSE</code>:开源许可证</li>
+<li><code>README.md</code>:仓库说明</li>
+<li>你的代码</li>
+<li><code>BYPhoneNumTF.podspec</code>: CocoaPods 的描述文件，这个文件<strong>非常重要</strong></li>
+</ul>
+<p>如下图：</p>
+<p><img src="https://ww2.sinaimg.cn/large/006tNbRwgy1fdfhvy3c19j31iq0dqn03.jpg" alt=""></p>
+<p><code>BYPhoneNumTF</code> 文件夹下是我存放代码的地方</p>
+<p><code>BYPhoneNumTF_Demo</code> 是代码使用样例（不是必须的）</p>
+<h4 id="创建-podspec"><a href="#创建-podspec" class="headerlink" title="创建.podspec"></a>创建<code>.podspec</code></h4><p><code>.podspec</code> 是用 Ruby 的配置文件，描述你项目的信息。</p>
+<p>在你的仓库目录下，使用终端命令创建</p>
+<pre><code>$ pod spec create BYPhoneNumTF
+</code></pre><p>这时就会在你的仓库下生成 <code>BYPhoneNumTF.podspec</code> 文件</p>
+<p><img src="https://ww4.sinaimg.cn/large/006tNbRwgy1fdfioo1c4zj31bq0s20zn.jpg" alt=""></p>
+<p>修改里面的配置就可以发布了~当然，没这么简单。</p>
+<p>配置文件中的注释很多，而且很多配置都不是必须的，写多了等下验证还不让过~</p>
+<p>so~<strong>强烈建议</strong>，直接拷贝下面的主要配置进行修改</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">Pod::Spec.new <span class="keyword">do</span> <span class="params">|s|</span></div><div class="line">  s.name         = <span class="string">"BYPhoneNumTF"</span> <span class="comment"># 项目名称</span></div><div class="line">  s.version      = <span class="string">"1.0.0"</span>        <span class="comment"># 版本号 与 你仓库的 标签号 对应</span></div><div class="line">  s.license      = <span class="string">"MIT"</span>          <span class="comment"># 开源证书</span></div><div class="line">  s.summary      = <span class="string">"A delightful TextField of PhoneNumber"</span> <span class="comment"># 项目简介</span></div><div class="line"></div><div class="line">  s.homepage     = <span class="string">"https://github.com/qiubaiying/BYPhoneNumTF"</span> <span class="comment"># 你的主页</span></div><div class="line">  s.source       = &#123; <span class="symbol">:git</span> =&gt; <span class="string">"https://github.com/qiubaiying/BYPhoneNumTF.git"</span>, <span class="symbol">:tag</span> =&gt; <span class="string">"<span class="subst">#&#123;s.version&#125;</span>"</span> &#125;<span class="comment">#你的仓库地址，不能用SSH地址</span></div><div class="line">  s.source_files = <span class="string">"BYPhoneNumTF/*.&#123;h,m&#125;"</span> <span class="comment"># 你代码的位置， BYPhoneNumTF/*.&#123;h,m&#125; 表示 BYPhoneNumTF 文件夹下所有的.h和.m文件</span></div><div class="line">  s.requires_arc = <span class="literal">true</span> <span class="comment"># 是否启用ARC</span></div><div class="line">  s.platform     = <span class="symbol">:ios</span>, <span class="string">"7.0"</span> <span class="comment">#平台及支持的最低版本</span></div><div class="line">  s.frameworks   = <span class="string">"UIKit"</span>, <span class="string">"Foundation"</span> <span class="comment">#支持的框架</span></div><div class="line">  <span class="comment"># s.dependency   = "AFNetworking" # 依赖库</span></div><div class="line">  </div><div class="line">  <span class="comment"># User</span></div><div class="line">  s.author             = &#123; <span class="string">"BY"</span> =&gt; <span class="string">"qiubaiyingios@163.com"</span> &#125; <span class="comment"># 作者信息</span></div><div class="line">  s.social_media_url   = <span class="string">"http://qiubaiying.github.io"</span> <span class="comment"># 个人主页</span></div><div class="line"></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+<p>最最关键的步骤的到了，验证 <code>.podspec</code> 文件的格式是否正确，</p>
+<pre><code>$ pod lib lint
+</code></pre><p>验证会出现成功出现</p>
+<pre><code> -&gt; BYPhoneNumTF (1.0.0)
+
+BYPhoneNumTF passed validation.    
+</code></pre><p>但是很多情况没这么顺利，比如:</p>
+<pre><code> -&gt; BYPhoneNumTF (1.0.0)
+    - WARN  | url: There was a problem validating the URL http://qiubaiying.github.io.
+
+[!] BYPhoneNumTF did not pass validation, due to 1 warning (but you can use `--allow-warnings` to ignore it) and all results apply only to public specs, but you can use `--private` to ignore them if linting the specification for a private pod.
+[!] The validator for Swift projects uses Swift 3.0 by default, if you are using a different version of swift you can use a `.swift-version` file to set the version for your Pod. For example to use Swift 2.3, run: 
+    `echo &quot;2.3&quot; &gt; .swift-version`.
+You can use the `--no-clean` option to inspect any issue.
+</code></pre><p>提示我们需要加<code>--allow-warnings</code>这么一句话，命令改为</p>
+<pre><code>$ pod lib lint --allow-warnings
+</code></pre><p>若还是提示什么<code>&#39;echo &quot;2.3&quot; &gt; .swift-version&#39;</code>的，就加这么一个东西。</p>
+<pre><code>$ echo &quot;2.3&quot; &gt; .swift-version
+</code></pre><p>然后在进行验证，这是应该就可以了。若还是不行，回到配置文件中检查有没有写错配置信息~</p>
+<h4 id="给仓库打标签"><a href="#给仓库打标签" class="headerlink" title="给仓库打标签"></a>给仓库打标签</h4><p>验证成功后，将仓库提交到远程，然后给仓库打上标签并将标签也推送到远程。</p>
+<p>标签相当于将你的仓库的一个压缩包，用于稳定存储当前版本。标签号与你在 <code>s.version = &quot;1.0.0&quot;</code>的版本号一致 <code>1.0.0</code></p>
+<pre><code>创建标签
+$ git tag -a 1.0.0 -m &apos;标签说明&apos; 
+推送到远程
+$ git push origin --tags
+</code></pre><h4 id="发布-podspec"><a href="#发布-podspec" class="headerlink" title="发布.podspec"></a>发布<code>.podspec</code></h4><p>最后一步，发布项目的描述的文件 <code>BYPhoneNumTF.podspec</code> </p>
+<p>在仓库目录下执行</p>
+<pre><code>pod trunk push BYPhoneNumTF.podspec
+</code></pre><p>将你的 <code>BYPhoneNumTF.podspec</code> 发布到公有的speecs上,这一步其实做了很多操作,包括 </p>
+<ol>
+<li>更新本地 pods 库 <code>~/.cocoaPods.repo/master</code></li>
+</ol>
+<ul>
+<li>验证<code>.podspec</code>格式是否正确</li>
+<li>将 <code>.podspec</code> 文件转成 JSON 格式</li>
+<li>对 <code>master</code> 仓库 进行合并、提交.<a href="https://github.com/CocoaPods/Specs" target="_blank" rel="external">master仓库地址</a> </li>
+</ul>
+<p>成功后将会出现下列信息：</p>
+<pre><code>Updating spec repo `master`
+Validating podspec
+ -&gt; BYPhoneNumTF (1.0.0)
+
+Updating spec repo `master`
+
+--------------------------------------------------------------------------------
+ 🎉  Congrats
+
+ 🚀  BYPhoneNumTF (1.0.0) successfully published
+ 📅  March 7th, 01:39
+ 🌎  https://cocoapods.org/pods/BYPhoneNumTF
+ 👍  Tell your friends!
+</code></pre><p>说明发布成功，你就可以通过上面的URL: <a href="https://cocoapods.org/pods/BYPhoneNumTF" target="_blank" rel="external">https://cocoapods.org/pods/BYPhoneNumTF</a> 进入的Pods查看自己的仓库信息了.</p>
+<p><img src="https://ww3.sinaimg.cn/large/006tNbRwgy1fded7yh8ugj31kw19djyk.jpg" alt=""></p>
+<h4 id="使用仓库"><a href="#使用仓库" class="headerlink" title="使用仓库"></a>使用仓库</h4><p>发布到Cocoapods后，在终端更新本地pods仓库信息</p>
+<pre><code>$ pod setup
+</code></pre><p>查询仓库</p>
+<pre><code>$ pod search BYPhoneNumTF
+</code></pre><hr>
+<pre><code>-&gt; BYPhoneNumTF (1.0.0)
+   A delightful TextField of PhoneNumber
+   pod &apos;BYPhoneNumTF&apos;, &apos;~&gt; 1.0.0&apos;
+   - Homepage: https://github.com/qiubaiying/BYPhoneNumTF
+   - Source:   https://github.com/qiubaiying/BYPhoneNumTF.git
+   - Versions: 1.0.0, 0.0.1 [BYPhoneNumTF repo]
+(END)
+</code></pre><p>若出现仓库信息说明已经成功了，这时候你就可以在 <code>Podfile</code> 添加、使用自己的仓库了 <code>pod &#39;BYPhoneNumTF&#39;, &#39;~&gt; 1.0.0&#39;</code></p>
+<p><img src="https://ww1.sinaimg.cn/large/006tNbRwgy1fdedvficvaj30fu0loaex.jpg" alt=""></p>
+<h4 id="更新维护"><a href="#更新维护" class="headerlink" title="更新维护"></a>更新维护</h4><p>当你的代码更新维护后，就需要重写发布，流程是：</p>
+<ul>
+<li>更新<code>BYPhoneNumTF.podspec</code>中的版本号</li>
+<li>打上标签推送远程</li>
+<li><code>pod trunk push BYPhoneNumTF.podspec</code> 推送到pods仓库</li>
+</ul>
+<p>更新后你就可以在 <a href="https://github.com/CocoaPods/Specs" target="_blank" rel="external">CocoaPods Master Repo</a> 仓库上看到自己的提交记录了。</p>
+<p><img src="https://ww4.sinaimg.cn/large/006tNbRwgy1fdfkr2l7omj31kw0d7446.jpg" alt=""></p>
+<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>到此,你已经掌握了创建和维护一个Cocoapods公有仓库的技能了，是不是很棒~</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Lisme 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Lisme 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    BY
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://mysticpg.com/2017/03/08/2017-03-08-CocoaPods公有仓库的创建/" title="CocoaPods公有仓库的创建">http://mysticpg.com/2017/03/08/2017-03-08-CocoaPods公有仓库的创建/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/iOS/" rel="tag"># iOS</a>
+          
+            <a href="/tags/CocoaPods/" rel="tag"># CocoaPods</a>
+          
+            <a href="/tags/Git/" rel="tag"># Git</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/07/2017-3-07-文件目录树状(tree)显示/" rel="next" title="文件目录树状(tree)显示">
+                <i class="fa fa-chevron-left"></i> 文件目录树状(tree)显示
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/10/2017-03-10-CocoaPods私有仓库的创建/" rel="prev" title="CocoaPods私有仓库的创建">
+                CocoaPods私有仓库的创建 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="lisme"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.png"
+                alt="Lisme" />
+            
+              <p class="site-author-name" itemprop="name">Lisme</p>
+              <p class="site-description motion-element" itemprop="description">励志做个浪漫的Geek</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/MysticPG" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://www.jianshu.com/users/c609ef44dd89" target="_blank" title="简书">
+                    
+                      <i class="fa fa-fw fa-globe"></i>简书</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.zhihu.com/people/lisme-61" target="_blank" title="知乎">
+                    
+                      <i class="fa fa-fw fa-globe"></i>知乎</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://weibo.com/2410745483/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank" title="Weibo">
+                    
+                      <i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#正文"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#注册-CocoaPods-账号"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">注册 CocoaPods 账号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建Git仓库"><span class="nav-number">2.0.0.2.</span> <span class="nav-text">创建Git仓库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建-podspec"><span class="nav-number">2.0.0.3.</span> <span class="nav-text">创建.podspec</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#给仓库打标签"><span class="nav-number">2.0.0.4.</span> <span class="nav-text">给仓库打标签</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#发布-podspec"><span class="nav-number">2.0.0.5.</span> <span class="nav-text">发布.podspec</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用仓库"><span class="nav-number">2.0.0.6.</span> <span class="nav-text">使用仓库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#更新维护"><span class="nav-number">2.0.0.7.</span> <span class="nav-text">更新维护</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#结语"><span class="nav-number">3.</span> <span class="nav-text">结语</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Lisme</span>
+
+ 
+    <span class="post-meta-divider"></span>
+    <span class="post-meta-item-icon">
+      
+    </span>
+   
+   
+</div>
+
+<div class="powered-by">
+<i class="fa fa-user-plus"></i><span id="busuanzi_container_site_uv">
+  访客:<span id="busuanzi_value_site_uv"></span>位
+</span>
+</div>
+
+
+  <span class="post-meta-divider">|</span>
+
+
+<div class="powered-by">
+<i class="fa fa-eye"></i><span id="busuanzi_container_site_pv">
+    访问:<span id="busuanzi_value_site_pv"></span>次
+</span>
+</div>
+
+
+  <span class="post-meta-divider">|</span>
+
+
+<div class="theme-info">
+  <div class="powered-by"></div><i class="fa fa-line-chart"></i>
+  <span class="post-count">全站共15.1k字</span>
+</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="true"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+
+  
+
+  
+
+  
+		<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+	
+</body>
+</html>
+<!-- ҳ������С���� -->
+<script type="text/javascript" src="/js/src/love.js"></script>

@@ -94,7 +94,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="iOS,Xcode,ruby,shell," />
 
 
 
@@ -107,17 +107,24 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="利用xcode的命令行工具 xcdeobulid 进行项目的编译打包，生成ipa包，并上传到fir  前言现在网上的自动打包教程几乎都还是xcodebuild + xcrun的方式先生成.app包 再生成.ipa包,结果弄了一整天硬是没成功~ 后来发现PackageApplication is deprecated，悲剧。然后手动压缩的 .ipa包因为签名问题无法装到手机上。 后来用了archi">
+<meta name="keywords" content="iOS,Xcode,ruby,shell">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://mysticpg.com/2017/10/25/hello-world/index.html">
+<meta property="og:title" content="iOS自动打包">
+<meta property="og:url" content="http://mysticpg.com/2017/04/20/2017-04-20-iOS自动打包/index.html">
 <meta property="og:site_name" content="Lisme Blog">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="利用xcode的命令行工具 xcdeobulid 进行项目的编译打包，生成ipa包，并上传到fir  前言现在网上的自动打包教程几乎都还是xcodebuild + xcrun的方式先生成.app包 再生成.ipa包,结果弄了一整天硬是没成功~ 后来发现PackageApplication is deprecated，悲剧。然后手动压缩的 .ipa包因为签名问题无法装到手机上。 后来用了archi">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-10-25T14:48:46.633Z">
+<meta property="og:image" content="https://ww3.sinaimg.cn/large/006tNc79gy1ff1bcz534ij30g609uq48.jpg">
+<meta property="og:image" content="https://ww3.sinaimg.cn/large/006tNc79gy1ff1bhmwvxfj30ax01pdfu.jpg">
+<meta property="og:image" content="https://ww3.sinaimg.cn/large/006tNc79gy1ff1bijdlsgj30bh01st8q.jpg">
+<meta property="og:image" content="https://ww4.sinaimg.cn/large/006tNc79gy1ff1bishpk8j30be01sglm.jpg">
+<meta property="og:image" content="https://ww3.sinaimg.cn/large/006tNc79gy1ff28ccsqhyj304t07bwei.jpg">
+<meta property="og:updated_time" content="2017-09-12T09:58:29.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="iOS自动打包">
+<meta name="twitter:description" content="利用xcode的命令行工具 xcdeobulid 进行项目的编译打包，生成ipa包，并上传到fir  前言现在网上的自动打包教程几乎都还是xcodebuild + xcrun的方式先生成.app包 再生成.ipa包,结果弄了一整天硬是没成功~ 后来发现PackageApplication is deprecated，悲剧。然后手动压缩的 .ipa包因为签名问题无法装到手机上。 后来用了archi">
+<meta name="twitter:image" content="https://ww3.sinaimg.cn/large/006tNc79gy1ff1bcz534ij30g609uq48.jpg">
 
 
 
@@ -147,13 +154,13 @@
 
 
 
-  <link rel="canonical" href="http://mysticpg.com/2017/10/25/hello-world/"/>
+  <link rel="canonical" href="http://mysticpg.com/2017/04/20/2017-04-20-iOS自动打包/"/>
 
 
 
 
 
-  <title>Hello World | Lisme Blog</title>
+  <title>iOS自动打包 | Lisme Blog</title>
   
 
 
@@ -280,7 +287,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://mysticpg.com/2017/10/25/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://mysticpg.com/2017/04/20/2017-04-20-iOS自动打包/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lisme">
@@ -297,7 +304,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World</h1>
+          <h1 class="post-title" itemprop="name headline">iOS自动打包</h1>
         
 
         <div class="post-meta">
@@ -309,8 +316,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-25T22:48:46+08:00">
-                2017-10-25
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-20T00:00:00+08:00">
+                2017-04-20
               </time>
             
 
@@ -325,8 +332,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-10-25T22:48:46+08:00">
-                2017-10-25
+              <time title="更新于" itemprop="dateModified" datetime="2017-09-12T17:58:29+08:00">
+                2017-09-12
               </time>
             
           </span>
@@ -353,7 +360,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  78
+                  718
                 </span>
               
 
@@ -369,7 +376,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  3
                 </span>
               
             </div>
@@ -390,15 +397,92 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <blockquote>
+<p>利用xcode的命令行工具 <code>xcdeobulid</code> 进行项目的编译打包，生成ipa包，并上传到fir</p>
+</blockquote>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>现在网上的自动打包教程几乎都还是<code>xcodebuild + xcrun</code>的方式先生成<code>.app</code>包 再生成<code>.ipa</code>包,结果弄了一整天硬是没成功~</p>
+<p>后来发现<code>PackageApplication is deprecated</code>，悲剧。然后手动压缩的 <code>.ipa</code>包因为签名问题无法装到手机上。</p>
+<p>后来用了<code>archive + -exportArchive</code>终于可以了~</p>
+<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><h2 id="Xcodebuild"><a href="#Xcodebuild" class="headerlink" title="Xcodebuild"></a>Xcodebuild</h2><p><strong>xcodebuild</strong> 的使用可以用 <code>man xcodebuild</code>查看。</p>
+<p>查看项目详情</p>
+<pre><code># cd 项目主目录
+xcodebuild -list
+</code></pre><p>输出项目的信息</p>
+<pre><code>Information about project &quot;StackGameSceneKit&quot;:
+    Targets:
+        StackGameSceneKit
+        StackGameSceneKitTests
+
+    Build Configurations:
+        Debug
+        Release
+
+    If no build configuration is specified and -scheme is not passed then &quot;Release&quot; is used.
+
+    Schemes:
+        StackGameSceneKit
+</code></pre><p>要留意 <code>Configurations</code>，<code>Schemes</code>这两个属性。</p>
+<h2 id="自动打包流程"><a href="#自动打包流程" class="headerlink" title="自动打包流程"></a>自动打包流程</h2><h3 id="生成-archive"><a href="#生成-archive" class="headerlink" title="生成 archive"></a>生成 archive</h3><p>生成archive的命令是 <code>xcodebuild archive</code> </p>
+<pre><code>xcodebuild archive -workspace ${project_name}.xcworkspace \
+               -scheme ${scheme_name} \
+               -configuration ${build_configuration} \
+               -archivePath ${export_archive_path}
+</code></pre><ul>
+<li><p>参数一：项目类型，，如果是混合项目 workspace 就用 <code>-workspace</code>，如果是 project 就用 <code>-project</code></p>
+</li>
+<li><p><code>-scheme</code>：项目名，上面<code>xcodebuild -list</code>中的 <code>Schemes</code></p>
+</li>
+<li><p><code>-configuration</code>：编译类型，在<code>configuration</code>选择, <code>Debug</code> 或者 <code>Release</code></p>
+</li>
+<li><p><code>-archivePath</code>：生成 archive 包的路径，需要精确到 <code>xx/xx.archive</code></p>
+</li>
+</ul>
+<p>首先需要创建一个<code>AdHocExportOptions.plist</code>文件</p>
+<h3 id="导出ipa包"><a href="#导出ipa包" class="headerlink" title="导出ipa包"></a>导出ipa包</h3><p>导出<code>.ipa</code>包经常会出现错误，<del>在ruby2.4.0版本中会报错，所以请使用其他版本的ruby</del>,最初的原因是使用了 ruby2.4.0 进行编译时出现的错误。</p>
+<p>解决方法是低版本的 ruby 进行编译，如使用系统版本：<code>rvm use system</code>。后面升级macOS系统（10.12.5）后发现 ruby2.4.0 能成功 导出ipa包了。</p>
+<p>导出ipa包使用命令：<code>xcodebuild  -exportArchive</code></p>
+<pre><code>xcodebuild  -exportArchive \
+            -archivePath ${export_archive_path} \
+            -exportPath ${export_ipa_path} \
+            -exportOptionsPlist ${ExportOptionsPlistPath}
+</code></pre><ul>
+<li><code>archivePath</code>：上面生成 archive 的路径</li>
+<li><code>-exportPath</code>：导出 ipa包 的路径</li>
+<li><code>exportOptionsPlist</code>：导出 ipa包 类型，需要指定格式的<code>plist</code>文件，分别是<code>AppStroe</code>、<code>AdHoc</code>、<code>Enterprise</code>,如下图</li>
+</ul>
+<p><img src="https://ww3.sinaimg.cn/large/006tNc79gy1ff1bcz534ij30g609uq48.jpg" alt=""></p>
+<p>选择这三个类别需要分别创建三个<code>plist</code>文件：</p>
+<ul>
+<li><p><code>AdHocExportOptionsPlist.plist</code></p>
+<p>  <img src="https://ww3.sinaimg.cn/large/006tNc79gy1ff1bhmwvxfj30ax01pdfu.jpg" alt=""></p>
+</li>
+<li><p><code>AppStoreExportOptionsPlist.plist</code></p>
+<p>  <img src="https://ww3.sinaimg.cn/large/006tNc79gy1ff1bijdlsgj30bh01st8q.jpg" alt=""></p>
+</li>
+<li><p><code>EnterpriseExportOptionsPlist.plist</code></p>
+<p>  <img src="https://ww4.sinaimg.cn/large/006tNc79gy1ff1bishpk8j30be01sglm.jpg" alt=""></p>
+</li>
+</ul>
+<h3 id="上传到-Fir"><a href="#上传到-Fir" class="headerlink" title="上传到 Fir"></a>上传到 Fir</h3><p>将项目上传到 <a href="https://fir.im" target="_blank" rel="external">Fir</a></p>
+<p>下载 <a href="https://github.com/FIRHQ/fir-cli/blob/master/doc/install.md" target="_blank" rel="external">fir 命令行工具</a> </p>
+<pre><code>gem install fir-cli
+</code></pre><p>获取 fir 的 API Token（右上角）</p>
+<p><img src="https://ww3.sinaimg.cn/large/006tNc79gy1ff28ccsqhyj304t07bwei.jpg" alt=""></p>
+<p>上传</p>
+<pre><code>fir publish &quot;ipa_Path&quot; -T &quot;firApiToken&quot;
+</code></pre><h2 id="自动打包脚本"><a href="#自动打包脚本" class="headerlink" title="自动打包脚本"></a>自动打包脚本</h2><p><del>再次提醒，请不要使用 ruby 2.4.0 运行该脚本！</del>，若在 ruby 2.4.0 下编译失败，请切换低版本的ruby。</p>
+<p>切换完毕记得重新安装 fir 命令行工具。</p>
+<p>脚本我fork了 <a href="https://github.com/jkpang/PPAutoPackageScript" target="_blank" rel="external">jkpang</a> 的脚本进行修改，添加了自动上传到 fir 的功能。</p>
+<p>使用方法在Github上有详细介绍。</p>
+<p>GitHub：<a href="https://github.com/qiubaiying/iOSAutoArchiveScript" target="_blank" rel="external">https://github.com/qiubaiying/iOSAutoArchiveScript</a></p>
+<h3 id="利用-自定义终端指令-简化打包过程"><a href="#利用-自定义终端指令-简化打包过程" class="headerlink" title="利用 自定义终端指令 简化打包过程"></a>利用 自定义终端指令 简化打包过程</h3><p>以zsh为例:</p>
+<pre><code>open ~/.zshrc
+</code></pre><p>添加自定义命令 cd + sh</p>
+<pre><code>alias mybuild=&apos;cd 项目地址/iOSAutoArchiveScript/ &amp;&amp;  sh 项目地址/iOSAutoArchiveScript/iOSAutoArchiveScript.sh&apos;
+</code></pre><p>这样打开终端输入<code>mybuild</code>，就可以轻松实现一键打包上传了</p>
+<blockquote>
+<p>本文首次发布于 <a href="http://qiubaiying.github.io" target="_blank" rel="external">BY Blog</a>, 作者 <a href="http://github.com/qiubaiying" target="_blank" rel="external">@柏荧(BY)</a> ,转载请保留原文链接.</p>
+</blockquote>
 
       
     </div>
@@ -444,11 +528,11 @@
         <ul class="post-copyright">
   <li class="post-copyright-author">
     <strong>本文作者：</strong>
-    Lisme
+    BY
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://mysticpg.com/2017/10/25/hello-world/" title="Hello World">http://mysticpg.com/2017/10/25/hello-world/</a>
+    <a href="http://mysticpg.com/2017/04/20/2017-04-20-iOS自动打包/" title="iOS自动打包">http://mysticpg.com/2017/04/20/2017-04-20-iOS自动打包/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -461,6 +545,18 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/iOS/" rel="tag"># iOS</a>
+          
+            <a href="/tags/Xcode/" rel="tag"># Xcode</a>
+          
+            <a href="/tags/ruby/" rel="tag"># ruby</a>
+          
+            <a href="/tags/shell/" rel="tag"># shell</a>
+          
+        </div>
+      
 
       
       
@@ -470,8 +566,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/06/19/2017-06-19-快速配置zsh/" rel="next" title="快速配置zsh">
-                <i class="fa fa-chevron-left"></i> 快速配置zsh
+              <a href="/2017/04/13/2017-04-13-CocoaPods-安装和使用/" rel="next" title="CocoaPods 安装和使用">
+                <i class="fa fa-chevron-left"></i> CocoaPods 安装和使用
               </a>
             
           </div>
@@ -479,6 +575,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/28/2017-04-28-RVM-使用指南/" rel="prev" title="RVM 使用指南">
+                RVM 使用指南 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -645,7 +745,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#正文"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Xcodebuild"><span class="nav-number">2.1.</span> <span class="nav-text">Xcodebuild</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自动打包流程"><span class="nav-number">2.2.</span> <span class="nav-text">自动打包流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#生成-archive"><span class="nav-number">2.2.1.</span> <span class="nav-text">生成 archive</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#导出ipa包"><span class="nav-number">2.2.2.</span> <span class="nav-text">导出ipa包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#上传到-Fir"><span class="nav-number">2.2.3.</span> <span class="nav-text">上传到 Fir</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自动打包脚本"><span class="nav-number">2.3.</span> <span class="nav-text">自动打包脚本</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#利用-自定义终端指令-简化打包过程"><span class="nav-number">2.3.1.</span> <span class="nav-text">利用 自定义终端指令 简化打包过程</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>

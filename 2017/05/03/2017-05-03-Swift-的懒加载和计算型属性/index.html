@@ -94,7 +94,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="iOS,Swift,Swift语法," />
 
 
 
@@ -107,17 +107,18 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="本文首次发布于 BY Blog, 作者 @柏荧(BY) ,转载请保留原文链接.  懒加载常规（简化）写法 懒加载的属性用 var 声明 123lazy var name: String = &amp;#123;	return &amp;quot;BY&amp;quot;&amp;#125;() 完整写法 123lazy var name: String = &amp;#123; () -&amp;gt; String i	return &amp;qu">
+<meta name="keywords" content="iOS,Swift,Swift语法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://mysticpg.com/2017/10/25/hello-world/index.html">
+<meta property="og:title" content="Swift 的懒加载和计算型属性">
+<meta property="og:url" content="http://mysticpg.com/2017/05/03/2017-05-03-Swift-的懒加载和计算型属性/index.html">
 <meta property="og:site_name" content="Lisme Blog">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="本文首次发布于 BY Blog, 作者 @柏荧(BY) ,转载请保留原文链接.  懒加载常规（简化）写法 懒加载的属性用 var 声明 123lazy var name: String = &amp;#123;	return &amp;quot;BY&amp;quot;&amp;#125;() 完整写法 123lazy var name: String = &amp;#123; () -&amp;gt; String i	return &amp;qu">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-10-25T14:48:46.633Z">
+<meta property="og:updated_time" content="2017-09-12T09:58:29.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="Swift 的懒加载和计算型属性">
+<meta name="twitter:description" content="本文首次发布于 BY Blog, 作者 @柏荧(BY) ,转载请保留原文链接.  懒加载常规（简化）写法 懒加载的属性用 var 声明 123lazy var name: String = &amp;#123;	return &amp;quot;BY&amp;quot;&amp;#125;() 完整写法 123lazy var name: String = &amp;#123; () -&amp;gt; String i	return &amp;qu">
 
 
 
@@ -147,13 +148,13 @@
 
 
 
-  <link rel="canonical" href="http://mysticpg.com/2017/10/25/hello-world/"/>
+  <link rel="canonical" href="http://mysticpg.com/2017/05/03/2017-05-03-Swift-的懒加载和计算型属性/"/>
 
 
 
 
 
-  <title>Hello World | Lisme Blog</title>
+  <title>Swift 的懒加载和计算型属性 | Lisme Blog</title>
   
 
 
@@ -280,7 +281,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://mysticpg.com/2017/10/25/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://mysticpg.com/2017/05/03/2017-05-03-Swift-的懒加载和计算型属性/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lisme">
@@ -297,7 +298,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World</h1>
+          <h1 class="post-title" itemprop="name headline">Swift 的懒加载和计算型属性</h1>
         
 
         <div class="post-meta">
@@ -309,8 +310,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-25T22:48:46+08:00">
-                2017-10-25
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-03T00:00:00+08:00">
+                2017-05-03
               </time>
             
 
@@ -325,8 +326,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2017-10-25T22:48:46+08:00">
-                2017-10-25
+              <time title="更新于" itemprop="dateModified" datetime="2017-09-12T17:58:29+08:00">
+                2017-09-12
               </time>
             
           </span>
@@ -353,7 +354,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  78
+                  352
                 </span>
               
 
@@ -390,15 +391,38 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <blockquote>
+<p>本文首次发布于 <a href="http://qiubaiying.github.io" target="_blank" rel="external">BY Blog</a>, 作者 <a href="http://github.com/qiubaiying" target="_blank" rel="external">@柏荧(BY)</a> ,转载请保留原文链接.</p>
+</blockquote>
+<h3 id="懒加载"><a href="#懒加载" class="headerlink" title="懒加载"></a>懒加载</h3><p>常规（简化）写法</p>
+<p>懒加载的属性用 <code>var</code> 声明</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">lazy var name: String = &#123;</div><div class="line">	return &quot;BY&quot;</div><div class="line">&#125;()</div></pre></td></tr></table></figure>
+<p>完整写法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">lazy var name: String = &#123; () -&gt; String i</div><div class="line">	return &quot;BY&quot;</div><div class="line">&#125;()</div></pre></td></tr></table></figure>
+<p>本质是一个创建一个闭包 <code>{}</code> 并且在调用该属性时执行闭包 <code>()</code>。</p>
+<p>如OC的懒加载不同的是 swift 懒加载闭包只调用一次，再次调用该属性时因为属性已经创建，不再执行闭包。</p>
+<h3 id="计算型属性"><a href="#计算型属性" class="headerlink" title="计算型属性"></a>计算型属性</h3><p>常规写法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var name: string &#123;</div><div class="line">	return &quot;BY&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>完整写法 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var name: string &#123;</div><div class="line">	get &#123;</div><div class="line">		return &quot;BY&quot;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>计算型属性本质是重写了 <code>get</code> 方法，其类似一个无参有返回值函数，每次调用该属性都会执行 <code>return</code></p>
+<p>通常这样使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">struct Cuboid &#123;</div><div class="line">    var width = 0.0, height = 0.0, depth = 0.0</div><div class="line">    var volume: Double &#123;</div><div class="line">        return width * height * depth</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">let fourByFiveByTwo = Cuboid(width: 4.0, height: 5.0, depth: 2.0)</div><div class="line">print(&quot;the volume of fourByFiveByTwo is \(fourByFiveByTwo.volume)&quot;)</div><div class="line">// Prints &quot;the volume of fourByFiveByTwo is 40.0&quot;</div></pre></td></tr></table></figure>
+<h3 id="两者对比"><a href="#两者对比" class="headerlink" title="两者对比"></a>两者对比</h3><p>相同点</p>
+<ul>
+<li>使用方法完全一致</li>
+<li>都是用 <code>var</code> 声明</li>
+</ul>
+<p>不同点</p>
+<ul>
+<li><p>实现原理不同</p>
+<p>  懒加载是第一次调用属性时执行闭包进行赋值</p>
+<p>  计算型属性是重写 <code>get</code> 方法</p>
+</li>
+<li><p>调用 <code>{}</code>的次数不同</p>
+<p>  懒加载的闭包只在属性第一次调用时执行<br>  计算型属性每次调用都要进入 <code>{}</code> 中，<code>return</code> 新的值</p>
+</li>
+</ul>
 
       
     </div>
@@ -444,11 +468,11 @@
         <ul class="post-copyright">
   <li class="post-copyright-author">
     <strong>本文作者：</strong>
-    Lisme
+    BY
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://mysticpg.com/2017/10/25/hello-world/" title="Hello World">http://mysticpg.com/2017/10/25/hello-world/</a>
+    <a href="http://mysticpg.com/2017/05/03/2017-05-03-Swift-的懒加载和计算型属性/" title="Swift 的懒加载和计算型属性">http://mysticpg.com/2017/05/03/2017-05-03-Swift-的懒加载和计算型属性/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -461,6 +485,16 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/iOS/" rel="tag"># iOS</a>
+          
+            <a href="/tags/Swift/" rel="tag"># Swift</a>
+          
+            <a href="/tags/Swift语法/" rel="tag"># Swift语法</a>
+          
+        </div>
+      
 
       
       
@@ -470,8 +504,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/06/19/2017-06-19-快速配置zsh/" rel="next" title="快速配置zsh">
-                <i class="fa fa-chevron-left"></i> 快速配置zsh
+              <a href="/2017/04/28/2017-04-28-RVM-使用指南/" rel="next" title="RVM 使用指南">
+                <i class="fa fa-chevron-left"></i> RVM 使用指南
               </a>
             
           </div>
@@ -479,6 +513,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/04/2017-05-04-R.swift-的使用/" rel="prev" title="R.swift 的使用">
+                R.swift 的使用 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -645,7 +683,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#懒加载"><span class="nav-number">1.</span> <span class="nav-text">懒加载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算型属性"><span class="nav-number">2.</span> <span class="nav-text">计算型属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#两者对比"><span class="nav-number">3.</span> <span class="nav-text">两者对比</span></a></li></ol></div>
             
 
           </div>
