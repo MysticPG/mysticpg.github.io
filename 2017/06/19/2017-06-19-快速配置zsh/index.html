@@ -12,6 +12,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
 <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
 <style>
     .pace .pace-progress {
         background: #1E92FB; /*进度条颜色*/
@@ -457,6 +469,20 @@ alias fh=&apos;defaults write com.apple.finder AppleShowAllFiles -boolean false 
 </code></pre>
       
     </div>
+      <div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">
+            -------------本文结束
+            <i class="fa fa-paw"></i>
+            感谢您的阅读-------------
+        </div>
+    
+</div>
+  
+</div>
+    
     
     
     
@@ -513,16 +539,18 @@ alias fh=&apos;defaults write com.apple.finder AppleShowAllFiles -boolean false 
 
       </div>
     
+    
+  
 
     <footer class="post-footer">
       
         <div class="post-tags">
           
-            <a href="/tags/终端/" rel="tag"># 终端</a>
+            <a href="/tags/终端/" rel="tag"><i class="fa fa-tag"></i> 终端</a>
           
-            <a href="/tags/zsh/" rel="tag"># zsh</a>
+            <a href="/tags/zsh/" rel="tag"><i class="fa fa-tag"></i> zsh</a>
           
-            <a href="/tags/Notes/" rel="tag"># Notes</a>
+            <a href="/tags/Notes/" rel="tag"><i class="fa fa-tag"></i> Notes</a>
           
         </div>
       
@@ -545,7 +573,7 @@ alias fh=&apos;defaults write com.apple.finder AppleShowAllFiles -boolean false 
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/10/25/hello-world/" rel="prev" title="Hello World">
+              <a href="/2017/10/30/hello-world/" rel="prev" title="Hello World">
                 Hello World <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -633,12 +661,21 @@ alias fh=&apos;defaults write com.apple.finder AppleShowAllFiles -boolean false 
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
             
 
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
             
 
             
@@ -646,7 +683,7 @@ alias fh=&apos;defaults write com.apple.finder AppleShowAllFiles -boolean false 
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
