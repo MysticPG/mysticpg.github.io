@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title></title>
+    <title><![CDATA[批量创建各种类型的文件]]></title>
     <url>%2F2017%2F12%2F15%2F%E6%89%B9%E9%87%8F%E5%88%9B%E5%BB%BA%E5%90%84%E7%A7%8D%E7%B1%BB%E5%9E%8B%E6%96%87%E4%BB%B6%2F</url>
-    <content type="text"><![CDATA[title: 批量创建各种类型的文件copyright: truepassword:date: 2017-12-15 09:34:19tags: 小技巧categories: 收藏 工具/原料 记事本 方法/步骤1. 创建一个文件夹，在文件夹里新建一个文本文档 2. 编辑文档复制下列命令，保存后关闭@echo off for /L %%x in (1,1,10) do @echo %%x&gt;%%x.doc 3. 重新命名文档，把后缀”.txt”改为”.bat”。 4. 双击运行”.bat”文件，成功批量创建10个word文档 5. 修改批量创建文件数量 6. 更改创建文件的类型]]></content>
+    <content type="text"><![CDATA[工具/原料 记事本 方法/步骤1. 创建一个文件夹，在文件夹里新建一个文本文档 2. 编辑文档复制下列命令，保存后关闭@echo off for /L %%x in (1,1,10) do @echo %%x&gt;%%x.doc 3. 重新命名文档，把后缀”.txt”改为”.bat”。 4. 双击运行”.bat”文件，成功批量创建10个word文档 5. 修改批量创建文件数量 6. 更改创建文件的类型]]></content>
+      <categories>
+        <category>收藏</category>
+      </categories>
+      <tags>
+        <tag>小技巧</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[博客设置]]></title>
